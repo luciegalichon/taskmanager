@@ -1,0 +1,13 @@
+
+<h1>Here are all the tasks you have to do ! Go to work !! </h1>
+
+<%= link_to "Add a task", new_task_path %>
+
+ <% @tasks.each do |task|  %>
+ <p> <%= task.description %>  - <%= task.done ? "fait" : "pas fait" %>  </p>
+
+<%= link_to "Editer", edit_task_path(task) %>
+<%= link_to "Supprimer", task_path(task), method: :delete %>
+ <hr>
+<% end %>
+
